@@ -1,0 +1,36 @@
+# the "app_lucky_number" route name is not important yet
+
+index:
+    path: /
+    controller: App\Controller\SecurityController::index
+
+login:
+    path: /login
+    controller: App\Controller\SecurityController::index
+
+institucion_login:
+    path: /institucion_login
+    controller: App\Controller\SecurityController::institucion_loginAction
+
+emm_user_homepage:
+    path: /OfertaPracticaProfesional
+    controller:   App\Controller\OfertaPracticaProfesionalController::index
+
+emm_user_login:
+    path: /Security
+    controller:   App\Controller\SecurityController::loginAction
+
+
+emm_user_login_check:
+    path: /login_check
+    controller:   App\Controller\SecurityController::login_checkAction
+
+emm_user_login_institucion_check:
+    path: /login_institucion_check
+    controller:   App\Controller\SecurityController::loginInstitucion_checkAction
+
+emm_user_logout:
+    path: /logout
+    controller:    App\Controller\SecurityController::logoutAction
+
+

@@ -1,0 +1,21 @@
+security:
+    # https://symfony.com/doc/current/security.html#where-do-users-come-from-user-providers
+    providers:
+        in_memory: { memory: null }
+    firewalls:
+        default:
+            anonymous: ~
+            http_basic: ~
+            #form_login:
+            #    login_path: /login
+            #    check_path: /login_check
+            #    username_parameter: usuario
+            #    password_parameter: password
+
+            #logout:
+            #    path: /logout
+            #    target: /login
+
+    access_control:
+        # - { path: ^/admin, roles: ROLE_ADMIN }
+        # - { path: ^/profile, roles: ROLE_USER }

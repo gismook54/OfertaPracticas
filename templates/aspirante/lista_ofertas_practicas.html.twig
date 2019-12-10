@@ -1,0 +1,57 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}OfertaPractica{% endblock %}
+
+{% block body %}
+
+    <style>
+
+        .table>thead>tr>th {
+            vertical-align: bottom !important;
+            border-bottom: 0.5px solid #9b2448 !important;
+            color: #972347 !important;
+            font-weight: 100 !important;
+        }
+
+        h4{
+            font-weight: 100;
+            color: #9b2448;
+            font-size: larger;
+        }
+    </style>
+    <br />
+    <h4>Ofertas Estancias Profesional</h4>
+
+    <br /><br />
+    <table class="table table-striped">
+        <thead>
+            <tr style="vertical-align: bottom !important;
+            border-bottom: 0.5px solid #9b2448 !important;
+            color: #972347 !important;
+            font-weight: 100 !important;">
+                <th>Carrera</th>
+                <th>Institución</th>
+                <th>Cupo</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for oferta_practica_profesional in oferta_practica_profesionals %}
+            <tr>
+                <td>{{ oferta_practica_profesional.getIdCarrera().descripcion }}</td>
+                <td>{{ oferta_practica_profesional.getIdInstitucion().nombre }}</td>
+                <td>{{ oferta_practica_profesional.cupo }}</td>
+                <td>
+                    <a href="{{ path('aspirante_detalle_oferta', {'idOfertaPracticaProfesional': oferta_practica_profesional.idOfertaPracticaProfesional}) }}">Postularme</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="5">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+
+{% endblock %}

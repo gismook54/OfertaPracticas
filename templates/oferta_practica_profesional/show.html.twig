@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}OfertaPracticaProfesional{% endblock %}
+
+{% block body %}
+    <br/>
+    <h4>Oferta Practica</h4>
+    <br/>
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Código</th>
+                <td>{{ oferta_practica_profesional.idOfertaPracticaProfesional }}</td>
+            </tr>
+            <tr>
+                <th>Carrera</th>
+                <td>{{ oferta_practica_profesional.getIdCarrera().descripcion }}</td>
+            </tr>
+            <tr>
+                <th>Cupo</th>
+                <td>{{ oferta_practica_profesional.cupo }}</td>
+            </tr>
+            <tr>
+                <th>Cupos Asignados</th>
+                <td>{{ oferta_practica_profesional.cupoAsignado }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div style="float:right;" class="row ">
+
+        <a class="btn btn-primary btn-sm" href="{{ path('oferta_practica_profesional_index') }}">Regresar</a>
+        <a class="btn btn-primary btn-sm"
+                    style="background: #efefef;
+                    border-color: #e2e3e4c9;
+                    color: #9d2449;" href="{{ path('oferta_practica_profesional_delete', {'idOfertaPracticaProfesional': oferta_practica_profesional.idOfertaPracticaProfesional}) }}">Eliminar</a>
+        <a class="btn btn-primary btn-sm active" href="{{ path('oferta_practica_profesional_edit', {'idOfertaPracticaProfesional': oferta_practica_profesional.idOfertaPracticaProfesional}) }}">Editar</a>
+
+    </div>
+
+{% endblock %}

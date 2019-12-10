@@ -1,0 +1,8 @@
+<form method="post" action="{{ path('oferta_practica_profesional_delete', {'idOfertaPracticaProfesional': oferta_practica_profesional.idOfertaPracticaProfesional}) }}" onsubmit="return confirm('Are you sure you want to delete this item?');">
+    <input type="hidden" name="_method" value="DELETE">
+    <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ oferta_practica_profesional.idOfertaPracticaProfesional) }}">
+    <button class="btn btn-primary btn-sm"
+            style="margin-top: -40px;background: #efefef;
+                    border-color: #e2e3e4c9;
+                    color: #9d2449;">Eliminar</button>
+</form>

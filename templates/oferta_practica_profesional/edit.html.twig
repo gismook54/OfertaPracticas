@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit OfertaPracticaProfesional{% endblock %}
+
+{% block body %}
+    <br/>
+    <h4>Actualizar Oferta</h4>
+    <div style="border:0.5px solid #DDD;padding-left: 10%;padding-right: 10%">
+        <br/>
+        {{ include('oferta_practica_profesional/_form.html.twig', {'button_label': 'Actualizar'}) }}
+        {{ include('oferta_practica_profesional/_delete_form.html.twig') }}
+        <br/>
+    </div>
+{% endblock %}

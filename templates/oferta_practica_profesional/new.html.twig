@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New OfertaPracticaProfesional{% endblock %}
+
+{% block body %}
+    <br/>
+    <h4>Crear Oferta</h4>
+    <hr style="border:0.5px solid #DDD;"/>
+    <div style="padding-left: 10%;padding-right: 10%">
+        <br/>
+            {{ include('oferta_practica_profesional/_form.html.twig') }}
+        <br/>
+    </div>
+
+{% endblock %}

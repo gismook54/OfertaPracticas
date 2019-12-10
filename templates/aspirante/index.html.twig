@@ -1,0 +1,59 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Aspirante index{% endblock %}
+
+{% block body %}
+    <h1>Aspirante index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>IdAspirante</th>
+                <th>Curp</th>
+                <th>Nombre</th>
+                <th>ApellidoPaterno</th>
+                <th>ApellidoMaterno</th>
+                <th>Correo</th>
+                <th>Telefono</th>
+                <th>Celular</th>
+                <th>Universidad</th>
+                <th>Usuario</th>
+                <th>Password</th>
+                <th>Matricula</th>
+                <th>Credencial_unadm</th>
+                <th>Estatus</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for aspirante in aspirantes %}
+            <tr>
+                <td>{{ aspirante.idAspirante }}</td>
+                <td>{{ aspirante.curp }}</td>
+                <td>{{ aspirante.nombre }}</td>
+                <td>{{ aspirante.apellidoPaterno }}</td>
+                <td>{{ aspirante.apellidoMaterno }}</td>
+                <td>{{ aspirante.correo }}</td>
+                <td>{{ aspirante.telefono }}</td>
+                <td>{{ aspirante.celular }}</td>
+                <td>{{ aspirante.universidad }}</td>
+                <td>{{ aspirante.usuario }}</td>
+                <td>{{ aspirante.password }}</td>
+                <td>{{ aspirante.matricula }}</td>
+                <td>{{ aspirante.credencialUnadm ? 'Yes' : 'No' }}</td>
+                <td>{{ aspirante.idEstatus.descripcion }}</td>
+                <td>
+                    <a href="{{ path('aspirante_show', {'idAspirante': aspirante.idAspirante}) }}">show</a>
+                    <a href="{{ path('aspirante_edit', {'idAspirante': aspirante.idAspirante}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="14">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('aspirante_new') }}">Create new</a>
+{% endblock %}

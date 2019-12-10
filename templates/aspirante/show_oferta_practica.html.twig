@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}OfertaPracticaProfesional{% endblock %}
+
+{% block body %}
+    <br/>
+    <h4>Detalle de la Oferta!</h4>
+    <hr style="border:0.5px solid #DDD;"/>
+
+    <a href="{{ path('aspirante_postulacion', {'idOfertaPracticaProfesional': oferta_practica_profesional.idOfertaPracticaProfesional}) }}"
+       class="btn btn-primary btn-sm active"
+       style="float: right">Postularme!</a>
+    <br /><br />
+    <table class="table">
+        <tbody>
+            <tr>
+                <th width="90">Carrera</th>
+                <td>{{ oferta_practica_profesional.getIdCarrera().descripcion }}</td>
+            </tr>
+            <tr>
+                <th width="90">Institució/Empresa</th>
+                <td>{{ oferta_practica_profesional.getIdInstitucion().nombre }}</td>
+            </tr>
+            <tr>
+                <th width="90">Descripción</th>
+                <td>{{ oferta_practica_profesional.descripcion }}</td>
+            </tr>
+            <tr>
+                <th width="90">Cupo</th>
+                <td>{{ oferta_practica_profesional.cupo }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+{% endblock %}

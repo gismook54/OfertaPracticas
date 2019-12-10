@@ -1,0 +1,58 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}AspiranteOfertaPractica{% endblock %}
+
+{% block body %}
+
+    <style>
+
+        .table>thead>tr>th {
+            vertical-align: bottom !important;
+            border-bottom: 0.5px solid #9b2448 !important;
+            color: #972347 !important;
+            font-weight: 100 !important;
+        }
+
+        h4{
+            font-weight: 100;
+            color: #9b2448;
+            font-size: larger;
+        }
+    </style>
+    <br />
+    <h4>Postulaciones de Aspirantes</h4>
+    <a class="btn btn-primary btn-sm" style="margin-top: -40px;background: #efefef;
+                    border-color: #e2e3e4c9;color: #9d2449;float: right"
+       href="{{ path('oferta_practica_profesional_index') }}">Regresar</a>
+
+    <br /><br />
+    <table class="table table-striped">
+        <thead>
+            <tr style="vertical-align: bottom !important;
+            border-bottom: 0.5px solid #9b2448 !important;
+            color: #972347 !important;
+            font-weight: 100 !important;">
+                <th>Código</th>
+                <th>Fecha Inscripción</th>
+                <th>Carrera</th>
+                <th>Aspirante</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for aspirante_oferta_p in aspirante_oferta_practica_profecional %}
+            <tr>
+                <td>{{ aspirante_oferta_p.idAspiranteOfertaPracticaProfecional }}</td>
+                <td>{{ aspirante_oferta_p.idAspiranteOfertaPracticaProfecional }}</td>
+                <td>{{ aspirante_oferta_p.getIdOfertaPracticaProfecional().getIdCarrera().descripcion }}</td>
+                <td>{{ aspirante_oferta_p.getIdAspirante().nombre}} {{ aspirante_oferta_p.getIdAspirante().apellidoPaterno}}</td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="5">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+
+{% endblock %}

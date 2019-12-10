@@ -1,0 +1,43 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Bienvenido!{% endblock %}
+
+{% block body %}
+    {% set aspirante = app.session.get('aspirante') %}
+
+    <h4>Home principal del ASPIRANTE!</h4>
+    <hr style="border:0.5px solid #DDD;"/>
+
+    <p style="font-size: 14px">Aspirante: {{ aspirante.getNombre() }}  {{ aspirante.getApellidoPaterno() }}</p>
+    <a href="{{ path('aspirante_oferta') }}"
+       class="btn btn-primary btn-sm active"
+       style="float: right">Postularme!</a>
+
+    <br />
+    <h4>Mis Postulaciones</h4>
+
+    <table class="table table-striped">
+        <thead>
+        <tr style="vertical-align: bottom !important;
+            border-bottom: 0.5px solid #9b2448 !important;
+            color: #972347 !important;
+            font-weight: 100 !important;">
+            <th width="35%">Carrera</th>
+            <th>Institución</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for oferta_practica in oferta_practicaS %}
+            <tr>
+                <td width="35%">{{ oferta_practica.getIdOfertaPracticaProfecional().getIdCarrera().descripcion }}</td>
+                <td>{{ oferta_practica.getIdOfertaPracticaProfecional().getIdInstitucion().nombre }}</td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="5">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+{% endblock %}

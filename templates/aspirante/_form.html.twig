@@ -1,0 +1,9 @@
+{{ form_start(form) }}
+    {{ form_widget(form) }}
+    <br />
+    <div style="float:right;" class="row ">
+        <a class="btn btn-primary btn-sm btn-cancelar" href="{{ path('index') }}">Cancelar</a>
+        <button class="btn btn-primary btn-sm active">{{ button_label|default('Crear') }}</button>
+    </div>
+    <br />
+{{ form_end(form) }}

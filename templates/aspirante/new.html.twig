@@ -1,0 +1,24 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}REGISTRO INICIAL DE ALUMNO{% endblock %}
+
+{% block body %}
+    <!--<a href="{{ path('aspirante_index') }}">back to list</a>-->
+
+    <br/>
+    {% if msg != null %}
+        <div class="alert alert-warning">
+            <p  style="font-weight: normal;font-size: 14px;">
+                {{ msg }}
+            </p>
+        </div>
+    {% endif %}
+
+    <h4>REGISTRO INICIAL DE ALUMNO</h4>
+    <hr style="border:0.5px solid #DDD;"/>
+    <div style="padding-left: 10%;padding-right: 10%">
+        <br/>
+        {{ include('aspirante/_form.html.twig') }}
+        <br/>
+    </div>
+{% endblock %}
